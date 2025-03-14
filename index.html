@@ -67,9 +67,9 @@
       animation: fadeIn 1s ease-in-out;
       opacity: 0;
       animation-fill-mode: forwards;
-      max-width: 720px;
+      width: 100%;
       margin: 0 auto;
-      padding: 3rem 1.5rem;
+      padding: 1.5rem 1.5rem;
     }
 
     section:nth-child(even) {
@@ -210,20 +210,16 @@
     <p>Às vezes, tudo o que a gente precisa é de alguém que ouça de verdade. Meu trabalho como psicóloga é oferecer esse espaço seguro, onde você pode se expressar com liberdade, sem julgamentos.</p>
   </section>
 
-<section id="sobre" style="position: center; padding: 4rem 2rem; display: flex; justify-content: center;">
-  <!-- Foto fora do quadro -->
-  <div style="position: absolute; left: -400px; top: 50%; transform: translateY(-50%);">
-    <img src="kaleandra.png"
-         alt="Foto da psicóloga Kaleandra Resta"
-         style="width: 300px; height: 300px; border-radius: 50%; object-fit: cover; box-shadow: 0 4px 12px rgba(0,0,0,0.2);" />
-  </div>
-
-  <!-- Bloco claro com texto -->
-  <div style="background-color: var(--cor-clara); padding: 2rem; border-radius: 12px; max-width: 800px;">
+<section id="sobre" style="display: flex; flex-wrap: wrap; align-items: center; gap: 2rem;">
+  <div style="flex: 1; min-width: 280px;">
     <h2>Sobre mim</h2>
   <p>Sou Kaleandra Resta, psicóloga formada pela PUC-Campinas e atuo com dedicação no atendimento a adolescentes e adultos. Minha trajetória na psicologia é guiada por empatia, escuta ativa e o desejo genuíno de acolher pessoas em momentos de vulnerabilidade. Acredito que cada pessoa tem uma história única, e por isso, merece um espaço seguro para ser ouvida com respeito e cuidado.</p>
   <p>Com especialização em Neuropsicologia e abordagem em Terapia Cognitivo-Comportamental (TCC), busco trabalhar de forma prática, baseada em evidências, com foco em ajudar meus pacientes a identificarem e modificarem padrões de pensamento e comportamento que causam sofrimento.</p>
   <p>Aqui comigo você encontra acompanhamento psicológico para ansiedade, depressão e outros transtornos, conflitos nas relações interpessoais, sofrimento relacionado ao trabalho, autoconhecimento, autocontrole, autoconfiança e muito mais. Tudo isso a partir de uma abordagem crítica, técnica, porém acolhedora e humanista, visando a transformação de si e a construção de uma vida que te faça sentido.</p>
+  </div>
+  <div style="flex-shrink: 0;">
+    <img src="kaleandra.png" alt="Foto da psicóloga Kaleandra Resta"
+         style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover; box-shadow: 0 2px 6px rgba(0,0,0,0.15);" />
   </div>
 </section>
 
