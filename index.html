@@ -1,96 +1,260 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Psicoterapia Online - Psicóloga</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kaleandra Resta - Psicóloga</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f7f5;
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    nav a.active {
+      border-bottom: 2px solid var(--cor-destaque);
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    :root {
+      --cor-fundo: #F2F2F2;
+      --cor-clara: #EAE6E3;
+      --cor-destaque: #AAC087;
+      --cor-escura: #424C31;
+      --cor-texto: #2D2F29;
+    }
+
+    * {
       margin: 0;
       padding: 0;
-      color: #2d2d2d;
+      box-sizing: border-box;
     }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--cor-fundo);
+      color: var(--cor-texto);
+      line-height: 1.8;
+    }
+
     header {
-      background-color: #bcd8ca;
-      padding: 20px;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
       text-align: center;
+      padding: 3rem 1rem 2rem;
+      background-color: var(--cor-clara);
     }
+
+    header img {
+      height: 60px;
+      margin-bottom: 1rem;
+    }
+
     header h1 {
-      margin: 0;
+      font-size: 2rem;
+      font-weight: 600;
+      font-family: 'Montserrat', sans-serif;
+      color: var(--cor-escura);
     }
-    .whatsapp-btn {
-      background-color: #25D366;
-      color: white;
-      padding: 12px 24px;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
-      display: inline-block;
-      margin-top: 20px;
-    }
+
     section {
-      padding: 40px 20px;
-      max-width: 800px;
-      margin: auto;
+      animation: fadeIn 1s ease-in-out;
+      opacity: 0;
+      animation-fill-mode: forwards;
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
     }
-    .section-light {
-      background-color: #ffffff;
+
+    section:nth-child(even) {
+      background-color: var(--cor-clara);
+      border-radius: 12px;
     }
-    h2 {
-      color: #4a7c59;
+
+    section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: var(--cor-escura);
+      font-family: 'Montserrat', sans-serif;
     }
-    footer {
-      background-color: #e9f0ec;
+
+    section p, section ul {
+      font-weight: 300;
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    ul {
+      padding-left: 1.5rem;
+    }
+
+    .cta {
+      width: calc(100% - 3rem);
+      background-color: var(--cor-destaque);
+      color: var(--cor-texto);
       text-align: center;
-      padding: 20px;
-      font-size: 0.9em;
+      padding: 3rem 1.5rem;
+      border-radius: 12px;
+      margin: 3rem auto;
+      max-width: 900px;
+    }
+
+    .cta a {
+      display: inline-block;
+      margin-top: 1rem;
+      background-color: var(--cor-escura);
+      color: white;
+      padding: 0.75rem 2rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    }
+
+    .cta a:hover {
+      background-color: #2a3324;
+    }
+
+    footer {
+      text-align: center;
+      background-color: var(--cor-clara);
+      color: var(--cor-escura);
+      font-size: 0.9rem;
+      padding: 2rem 1rem;
+    }
+
+    .instagram {
+      margin-top: 1rem;
+      display: block;
+      color: var(--cor-escura);
+      text-decoration: none;
+      font-weight: 600;
+    }
+      @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav {
+        margin-top: 1rem;
+        width: 100%;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+      }
+      nav a {
+        margin-right: 1rem;
+      }
     }
   </style>
+    <script>
+      window.addEventListener("scroll", function () {
+        const sections = document.querySelectorAll("section[id]");
+        const navLinks = document.querySelectorAll("nav a");
+
+        let current = "";
+
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop - 60;
+          if (pageYOffset >= sectionTop) {
+            current = section.getAttribute("id");
+          }
+        });
+
+        navLinks.forEach((link) => {
+          link.classList.remove("active");
+          if (link.getAttribute("href") === `#${current}`) {
+            link.classList.add("active");
+          }
+        });
+      });
+    </script>
 </head>
+
 <body>
-  <header>
-    <h1>Psicoterapia Online com Acolhimento Real</h1>
-    <p>Atendimento para adolescentes e adultos - Online e acolhedor</p>
-    <a class="whatsapp-btn" href="https://wa.me/seunumero">Agende pelo WhatsApp</a>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const sections = document.querySelectorAll("section");
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = 1;
+          }
+        });
+      }, {
+        threshold: 0.1
+      });
+
+      sections.forEach(section => observer.observe(section));
+    });
+  </script>
+  <header style="position: relative; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; padding: 2rem 1.5rem; background-color: var(--cor-clara);">
+    <div style="display: flex; align-items: center; gap: 1rem;">
+      <img src="Asset%2014.png" alt="Logotipo Kaleandra Resta" style="height: 60px; margin-bottom: 0;" />
+      
+    </div>
+    <nav style="display: flex; gap: 1rem;">
+      <a href="#sobre" style="color: var(--cor-escura); text-decoration: none; font-weight: 600; position: relative; padding-bottom: 4px;" onmouseover="this.style.borderBottom='2px solid var(--cor-destaque)'" onmouseout="this.style.borderBottom='none'">Sobre mim</a>
+      <a href="#funciona" style="color: var(--cor-escura); text-decoration: none; font-weight: 600; position: relative; padding-bottom: 4px;" onmouseover="this.style.borderBottom='2px solid var(--cor-destaque)'" onmouseout="this.style.borderBottom='none'">Como funciona</a>
+      <a href="#agendamento" style="color: var(--cor-escura); text-decoration: none; font-weight: 600; position: relative; padding-bottom: 4px;" onmouseover="this.style.borderBottom='2px solid var(--cor-destaque)'" onmouseout="this.style.borderBottom='none'">Agendamento</a>
+    </nav>
   </header>
 
-  <section class="section-light">
-    <h2>Está se sentindo sobrecarregado(a)?</h2>
-    <p>A psicoterapia pode ser o primeiro passo para retomar seu equilíbrio emocional. Com atendimento online e abordagem pela Terapia Cognitivo-Comportamental (TCC), você encontra um espaço seguro para falar e ser acolhido(a).</p>
-    <a class="whatsapp-btn" href="https://wa.me/seunumero">Fale comigo agora</a>
+  <section>
+    <h2>Me conta, como você está?</h2>
+    <p>Às vezes, tudo o que a gente precisa é de alguém que ouça de verdade. Meu trabalho como psicóloga é oferecer esse espaço seguro, onde você pode se expressar com liberdade, sem julgamentos.</p>
   </section>
 
-  <section>
+  <section id="sobre">
     <h2>Sobre mim</h2>
-    <p>Sou psicóloga com especialização em Neuropsicologia e atuação em TCC. Atendo online adolescentes e adultos, oferecendo escuta atenta e empática. Meu propósito é acolher e ajudar quem está passando por sofrimento emocional, com sensibilidade e profissionalismo.</p>
-  </section>
+  <p>Sou Kaleandra Resta, psicóloga formada pela PUC-Campinas e atuo com dedicação no atendimento a adolescentes e adultos. Minha trajetória na psicologia é guiada por empatia, escuta ativa e o desejo genuíno de acolher pessoas em momentos de vulnerabilidade. Acredito que cada pessoa tem uma história única, e por isso, merece um espaço seguro para ser ouvida com respeito e cuidado.</p>
+  <p>Com especialização em Neuropsicologia e abordagem em Terapia Cognitivo-Comportamental (TCC), busco trabalhar de forma prática, baseada em evidências, com foco em ajudar meus pacientes a identificarem e modificarem padrões de pensamento e comportamento que causam sofrimento.</p>
+  <p>Aqui comigo você encontra acompanhamento psicológico para ansiedade, depressão e outros transtornos, conflitos nas relações interpessoais, sofrimento relacionado ao trabalho, autoconhecimento, autocontrole, autoconfiança e muito mais. Tudo isso a partir de uma abordagem crítica, técnica, porém acolhedora e humanista, visando a transformação de si e a construção de uma vida que te faça sentido.</p>
+</section>
 
-  <section class="section-light">
-    <h2>Como posso te ajudar</h2>
-    <ul>
-      <li>Transtornos de ansiedade e depressão</li>
-      <li>Fobias, vícios e dificuldades emocionais</li>
-      <li>Transtornos alimentares</li>
-      <li>Momentos de crise e autoconhecimento</li>
-    </ul>
-    <p>Atendimento online via videochamada, com horários à tarde e início da noite.</p>
+  <section id="funciona">
+    <h2>Como funciona a psicoterapia online?</h2>
+    <p>Você escolhe um horário que funcione para você e conversamos por videochamada. O processo é leve, flexível e pode ser feito do seu espaço seguro. Não é necessário estar passando por uma crise para procurar ajuda — a terapia é também um espaço de autoconhecimento.</p>
   </section>
 
   <section>
-    <h2>Está pronto(a) para começar?</h2>
-    <p>Fazer terapia é um ato de coragem e amor-próprio. Se você sente que é hora de buscar ajuda, estou aqui para te ouvir.</p>
-    <a class="whatsapp-btn" href="https://wa.me/seunumero">Quero agendar minha consulta</a>
+    <h2>Posso te ajudar se você está:</h2>
+    <ul>
+      <li>Sentindo ansiedade ou tristeza frequente</li>
+      <li>Com dificuldade para lidar com emoções</li>
+      <li>Se sentindo sobrecarregado(a)</li>
+      <li>Buscando mais equilíbrio e bem-estar</li>
+    </ul>
   </section>
+
+  <section class="cta" id="agendamento">
+    <h2>Vamos conversar?</h2>
+    <p>Fale comigo pelo WhatsApp e agende sua primeira sessão. Será um prazer atendê-lo(a) com acolhimento e profissionalismo.</p>
+    <a href="https://wa.me/5519996692512">Agende sua sessão</a>
+  </section>
+
+  <section>
+    <h2>Por que buscar terapia?</h2>
+    <p>A terapia não é apenas para momentos de crise. É um espaço de desenvolvimento emocional, de fortalecimento da autoestima, de aprendizado sobre limites e de construção de relações mais saudáveis. Ao longo do processo, você aprende a se conhecer melhor e a lidar de forma mais consciente com seus desafios e emoções.</p>
+    <p>Não espere o sofrimento se intensificar para buscar ajuda. Investir em saúde mental é um gesto de autocuidado e coragem.</p>
+  </section>
+
+  <section class="cta">
+  <h2>Agende sua sessão agora</h2>
+  <p>Comece já a sua melhor escolha: a transformação, a consciência de que você é capaz de mudar e o entendimento de si mesmo.</p>
+  
+  <a href="https://wa.me/5519996692512">Agendar pelo WhatsApp</a>
+</section>
 
   <footer>
-    <p>Psicóloga Clínica | CRP 00/00000<br>
-    Especialista em Neuropsicologia e Perícia Judicial<br>
-    Atendimento online em todo o Brasil<br>
-    Segunda a sexta | Tarde e início da noite<br>
-    Cores e símbolos inspirados na leveza, natureza e acolhimento 🌿</p>
+    <p>Psicóloga CRP 06/97227 · Especialista em Neuropsicologia · Terapia Cognitivo-Comportamental<br>Atendimentos online para adolescentes e adultos</p>
+    <a class="instagram" href="https://www.instagram.com/qrkaleandra/" target="_blank">@qrkaleandra</a>
   </footer>
 </body>
+
 </html>
